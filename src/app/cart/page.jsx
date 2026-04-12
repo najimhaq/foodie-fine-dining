@@ -7,9 +7,10 @@ import EmptyState from '../shared/EmptyState';
 
 import ProceedToCheckout from '../components/ProceedToCheckout';
 import { useCart } from '../provider/CartContext';
+import RemoveFromCart from '../components/RemoveFromCart';
 
 const AddToCart = () => {
-  const { cartItems, removeFromCart } = useCart();
+  const { cartItems } = useCart();
 
   return (
     <section className='min-h-screen bg-[#0f0f0f] px-4 py-32 text-white'>
@@ -70,13 +71,7 @@ const AddToCart = () => {
                     </p>
                   </div>
 
-                  <button
-                    type='button'
-                    onClick={() => removeFromCart(item.id)}
-                    className='inline-flex items-center justify-center rounded-full bg-red-500 px-5 py-3 text-sm font-semibold text-white transition duration-300 hover:bg-red-600'
-                  >
-                    Remove
-                  </button>
+                  <RemoveFromCart itemId={item.id} />
                 </article>
               ))}
             </div>

@@ -1,6 +1,7 @@
 'use client';
 
 import { createContext, useContext, useState } from 'react';
+import { toast } from 'react-toastify';
 
 const CartContext = createContext(null);
 
@@ -8,17 +9,23 @@ export function CartProvider({ children }) {
   const [cartItems, setCartItems] = useState([]);
 
   const addToCart = (item) => {
-    setCartItems((prev) => {
-      const exists = prev.some((p) => p.id === item.id);
+    const exists = cartItems.some((p) => p.id === item.id);
 
-      if (exists) return prev;
+    if (exists) {
+      toast.error(`${item.dish_name} is already in the cart`);
+      return;
+    }
 
-      return [...prev, item];
-    });
+    setCartItems((prev) => [...prev, item]);
+    toast.success(`${item.dish_name} added successfully`);
   };
 
   const removeFromCart = (id) => {
+    const removedItem = cartItems.find((item) => item.id === id);
+
     setCartItems((prev) => prev.filter((item) => item.id !== id));
+
+    toast.info(`${removedItem?.dish_name || 'Item'} removed successfully`);
   };
 
   const clearCart = () => setCartItems([]);

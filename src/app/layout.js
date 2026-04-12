@@ -1,6 +1,6 @@
 // import Navbar from './components/NavBer';
 import './globals.css';
-
+import { ToastContainer } from 'react-toastify';
 import { Playfair_Display, Inter } from 'next/font/google';
 import Navbar from './components/NavBer';
 import { CartProvider } from './provider/CartContext';
@@ -38,6 +38,7 @@ export default function RootLayout({ children }) {
           <Navbar />
           {children}
         </CartProvider>
+        <ToastContainer position='top-right' autoClose={2000} />
       </body>
     </html>
   );
