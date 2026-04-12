@@ -4,8 +4,9 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 import EmptyState from '../shared/EmptyState';
-import { useCart } from '../provider/page';
+
 import ProceedToCheckout from '../components/ProceedToCheckout';
+import { useCart } from '../provider/CartContext';
 
 const AddToCart = () => {
   const { cartItems, removeFromCart } = useCart();

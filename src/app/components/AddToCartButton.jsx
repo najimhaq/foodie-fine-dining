@@ -1,6 +1,6 @@
 'use client';
 
-import { useCart } from '../provider/page';
+import { useCart } from '../provider/CartContext';
 
 export default function AddToCartButton({ item }) {
   const { cartItems, addToCart } = useCart();

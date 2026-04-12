@@ -100,3 +100,6 @@ http://localhost:3000
 ## Summary
 
 This project is a clean Next.js restaurant application with menu browsing, cart interaction, active navigation, and reusable UI patterns. Its structure follows the App Router model by separating server-rendered pages from client-side interactive components.[cite:262][cite:597]
+
+
+## Live Link: 

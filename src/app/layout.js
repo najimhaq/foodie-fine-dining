@@ -3,7 +3,7 @@ import './globals.css';
 
 import { Playfair_Display, Inter } from 'next/font/google';
 import Navbar from './components/NavBer';
-import { CartProvider } from './provider/page';
+import { CartProvider } from './provider/CartContext';
 
 const playfair = Playfair_Display({
   subsets: ['latin'],

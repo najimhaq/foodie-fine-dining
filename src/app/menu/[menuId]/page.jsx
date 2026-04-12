@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import ErrorState from '../../shared/ErrorState';
+
 import {
   FaArrowLeft,
   FaStar,
@@ -19,21 +19,20 @@ const MenuDetails = async ({ params }) => {
     }
   );
 
-   if (res.status === 404) {
-     notFound();
-   }
+  if (res.status === 404) {
+    notFound();
+  }
 
-   if (!res.ok) {
-     throw new Error('Failed to fetch menu details');
-   }
+  if (!res.ok) {
+    throw new Error('Failed to fetch menu details');
+  }
 
-   const result = await res.json();
-   const menu = result?.data;
+  const result = await res.json();
+  const menu = result?.data;
 
-   if (!menu) {
-     notFound();
-   }
-
+  if (!menu) {
+    notFound();
+  }
 
   return (
     <main className='min-h-screen bg-[#0f0f0f] text-white'>

@@ -1,4 +1,4 @@
-import { useCart } from '../provider/page';
+import { useCart } from '../provider/CartContext';
 
 const ProceedToCheckout = () => {
   const { clearCart } = useCart();
