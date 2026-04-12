@@ -8,9 +8,10 @@ import EmptyState from '../shared/EmptyState';
 import ProceedToCheckout from '../components/ProceedToCheckout';
 import { useCart } from '../provider/CartContext';
 import RemoveFromCart from '../components/RemoveFromCart';
+import { FaMinusCircle, FaPlusCircle } from 'react-icons/fa';
 
 const AddToCart = () => {
-  const { cartItems } = useCart();
+  const { cartItems, increaseQuantity, decreaseQuantity } = useCart();
 
   return (
     <section className='min-h-screen bg-[#0f0f0f] px-4 py-32 text-white'>
@@ -69,9 +70,29 @@ const AddToCart = () => {
                     <p className='mt-2 text-base font-semibold text-[#C8A96B]'>
                       ${item.price}
                     </p>
+                    <p className='mt-2 text-sm text-gray-400'>
+                      Quantity: {item.quantity}
+                    </p>
                   </div>
-
-                  <RemoveFromCart itemId={item.id} />
+                  <div className='flex flex-col gap-5 justify-center items-center'>
+                    <div className='flex gap-5 justify-center items-center'>
+                      <button
+                        onClick={() => increaseQuantity(item.id)}
+                        className='text-2xl text-[#C8A96B]'
+                      >
+                        <FaPlusCircle />
+                      </button>
+                      <button
+                        onClick={() => decreaseQuantity(item.id)}
+                        className='text-2xl text-[#C8A96B]'
+                      >
+                        <FaMinusCircle />
+                      </button>
+                    </div>
+                    <div>
+                      <RemoveFromCart itemId={item.id} />
+                    </div>
+                  </div>
                 </article>
               ))}
             </div>
@@ -82,14 +103,20 @@ const AddToCart = () => {
               </h2>
               <div className='mt-5 flex items-center justify-between border-b border-white/10 pb-4 text-sm text-gray-300'>
                 <span>Total Items</span>
-                <span>{cartItems.length}</span>
+                <span>
+                  {cartItems.reduce((sum, item) => sum + item.quantity, 0)}
+                </span>
               </div>
+
               <div className='mt-4 flex items-center justify-between text-lg font-semibold text-white'>
                 <span>Total Price</span>
                 <span>
                   $
                   {cartItems
-                    .reduce((sum, item) => sum + Number(item.price), 0)
+                    .reduce(
+                      (sum, item) => sum + Number(item.price) * item.quantity,
+                      0
+                    )
                     .toFixed(2)}
                 </span>
               </div>

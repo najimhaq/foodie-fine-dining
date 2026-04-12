@@ -9,6 +9,7 @@ import {
   FaStar,
   FaUtensils,
 } from 'react-icons/fa';
+import Link from 'next/link';
 
 export default function Home() {
   const foods = [
@@ -76,7 +77,7 @@ export default function Home() {
             <div>
               <span className='inline-block rounded-full border border-[#C8A96B]/30 bg-[#C8A96B]/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-[#C8A96B]'>
                 <div className='flex justify-center items-center gap-1.5'>
-                  <SiIfood className='size-4 animate-pulse'/>
+                  <SiIfood className='size-4 animate-pulse' />
                   Premium Dining Experience
                 </div>
               </span>
@@ -92,13 +93,19 @@ export default function Home() {
               </p>
 
               <div className='mt-8 flex flex-wrap gap-4'>
-                <button className='rounded-full bg-[#C8A96B] px-6 py-3 text-sm font-semibold text-black transition duration-300 hover:scale-105'>
+                <Link
+                  href='/reservation'
+                  className='rounded-full bg-[#C8A96B] px-6 py-3 text-sm font-semibold text-black transition duration-300 hover:scale-105'
+                >
                   Book a Table
-                </button>
+                </Link>
 
-                <button className='rounded-full border border-white/15 bg-white/5 px-6 py-3 text-sm font-semibold text-white transition duration-300 hover:bg-white/10'>
+                <Link
+                  href='/menu'
+                  className='rounded-full border border-white/15 bg-white/5 px-6 py-3 text-sm font-semibold text-white transition duration-300 hover:bg-white/10'
+                >
                   Explore Menu
-                </button>
+                </Link>
               </div>
 
               <div className='mt-10 flex flex-wrap items-center gap-6 text-sm text-gray-300'>

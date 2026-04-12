@@ -1,7 +1,7 @@
 // import Navbar from './components/NavBer';
 import './globals.css';
 import { ToastContainer } from 'react-toastify';
-import { Playfair_Display, Inter } from 'next/font/google';
+import { Playfair_Display, Inter, Ubuntu } from 'next/font/google';
 import Navbar from './components/NavBer';
 import { CartProvider } from './provider/CartContext';
 
@@ -10,6 +10,12 @@ const playfair = Playfair_Display({
   variable: '--font-heading',
   display: 'swap',
 });
+// const ubuntu = Ubuntu({
+//   subsets: ['latin'],
+//   weight: ['400', '500', '700'], // এখানে weight দিতে হবে
+//   variable: '--font-heading',
+//   display: 'swap',
+// });
 
 const inter = Inter({
   subsets: ['latin'],
