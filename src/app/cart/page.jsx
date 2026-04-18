@@ -122,6 +122,7 @@ const AddToCart = () => {
               </div>
 
               <ProceedToCheckout />
+              
             </aside>
           </div>
         )}

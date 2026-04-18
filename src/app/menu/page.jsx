@@ -56,7 +56,7 @@ const MenuPage = async ({ searchParams }) => {
   });
 
   return (
-    <section className='bg-[#0f0f0f] px-4 py-32 text-white'>
+    <section className='bg-[#0f0f0f] px-4 py-32 text-white mt-5'>
       <div className='mx-auto max-w-7xl'>
         <div className='mb-12 max-w-3xl'>
           <p className='text-sm font-semibold uppercase tracking-[0.3em] text-[#C8A96B]'>

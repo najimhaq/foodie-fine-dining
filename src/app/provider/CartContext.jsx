@@ -1,7 +1,7 @@
 'use client';
 
 import { createContext, useContext, useState } from 'react';
-import { toast } from 'react-toastify';
+import { Slide, toast } from 'react-toastify';
 
 const CartContext = createContext(null);
 
@@ -17,7 +17,18 @@ export function CartProvider({ children }) {
     }
 
     setCartItems((prev) => [...prev, { ...item, quantity: 1 }]);
-    toast.success(`${item.dish_name} added successfully`);
+
+    toast(`${item.dish_name} added successfully`, {
+      position: 'top-right',
+      autoClose: 2000,
+      hideProgressBar: false,
+      closeOnClick: false,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: 'light',
+      transition: Slide,
+    });
   };
 
   const increaseQuantity = (productId) => {
