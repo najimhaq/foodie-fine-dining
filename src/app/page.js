@@ -10,7 +10,7 @@ import {
   FaUtensils,
 } from 'react-icons/fa';
 import Link from 'next/link';
-import Navbar from './components/Navbar';
+import Navbar from './layout/Navbar';
 
 export default function Home() {
   const foods = [

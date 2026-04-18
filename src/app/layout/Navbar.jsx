@@ -29,11 +29,11 @@ export default function Navbar() {
     <header className='fixed top-0 left-0 z-50 w-full'>
       <nav className='mx-auto mt-4 w-[95%] max-w-7xl rounded-2xl border border-[#C8A96B]/20 bg-[#111111]/75 backdrop-blur-xl shadow-[0_10px_40px_rgba(0,0,0,0.35)]'>
         <div className='flex items-center justify-between px-4 py-3 md:px-6 lg:px-8'>
+          {/* Logo */}
           <Link href='/' className='flex items-center gap-3'>
             <div className='flex h-11 w-11 items-center justify-center rounded-full border border-[#C8A96B]/40 bg-[#1A1A1A] text-[#C8A96B] shadow-inner'>
               <span className='text-lg font-semibold'>F</span>
             </div>
-
             <div className='leading-tight'>
               <h2 className='text-lg font-semibold uppercase tracking-[0.18em] text-white'>
                 Foodie
@@ -44,10 +44,10 @@ export default function Navbar() {
             </div>
           </Link>
 
+          {/* Desktop Nav */}
           <div className='hidden items-center gap-2 rounded-full border border-white/10 bg-white/5 px-2 py-2 md:flex'>
             {navLinks.map((link) => {
               const isActive = isActivePath(link.path);
-
               return (
                 <Link
                   key={link.path}
@@ -65,6 +65,7 @@ export default function Navbar() {
             })}
           </div>
 
+          {/* Reservation Button */}
           <div className='hidden items-center gap-3 md:flex'>
             <Link
               href='/reservation'
@@ -80,6 +81,7 @@ export default function Navbar() {
             </Link>
           </div>
 
+          {/* Mobile Menu Toggle */}
           <button
             type='button'
             onClick={() => setMenuOpen(!menuOpen)}
@@ -111,15 +113,15 @@ export default function Navbar() {
           </button>
         </div>
 
+        {/* Mobile Menu */}
         <div
           className={`overflow-hidden transition-all duration-300 md:hidden ${
-            menuOpen ? 'max-h-[500px] opacity-100' : 'max-h-0 opacity-0'
+            menuOpen ? 'max-h-125 opacity-100' : 'max-h-0 opacity-0'
           }`}
         >
           <div className='space-y-2 px-4 pb-4 pt-2'>
             {navLinks.map((link) => {
               const isActive = isActivePath(link.path);
-
               return (
                 <Link
                   key={link.path}
