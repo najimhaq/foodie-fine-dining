@@ -1,5 +1,5 @@
 import { SiIfood } from 'react-icons/si';
-import Navbar from './components/NavBar';
+
 import {
   FaArrowRight,
   FaClock,
@@ -10,6 +10,7 @@ import {
   FaUtensils,
 } from 'react-icons/fa';
 import Link from 'next/link';
+import Navbar from './components/NavBar';
 
 export default function Home() {
   const foods = [
