@@ -4,7 +4,7 @@ import { ToastContainer } from 'react-toastify';
 import { Playfair_Display, Inter, Ubuntu } from 'next/font/google';
 
 import { CartProvider } from './provider/CartContext';
-import Navbar from './components/Navbar';
+import Navbar from './components/NavBar';
 
 const playfair = Playfair_Display({
   subsets: ['latin'],

@@ -2,9 +2,9 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { FaArrowRight, FaStar } from 'react-icons/fa';
-import EmptyState from '../shared/EmptyState';
-import AddToCartButton from '../components/AddToCartButton';
 import MenuFilters from './MenuFilters';
+import AddToCartButton from '../components/AddToCartButton';
+import EmptyState from '../shared/EmptyState';
 
 const MenuPage = async ({ searchParams }) => {
   const params = await searchParams;

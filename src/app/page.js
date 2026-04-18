@@ -1,5 +1,5 @@
 import { SiIfood } from 'react-icons/si';
-import Navbar from './components/Navbar';
+import Navbar from './components/NavBar';
 import {
   FaArrowRight,
   FaClock,
